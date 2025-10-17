@@ -1,0 +1,165 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Định dạng văn bản</title>
+    <link rel="icon" href="https://img.icons8.com/ios/50/000000/mother.png" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      h2 {
+        color: rgb(20, 232, 108);
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      .container {
+        max-width: 800px;
+        width: 100%;
+      }
+
+      pre {
+        background-color: grey;
+        font-family: "Courier New", Courier, monospace;
+        color: blue;
+        text-align: left;
+        padding: 15px 60px;
+        margin: 0;
+        line-height: 1.7;
+        overflow-x: auto;
+        white-space: pre;
+        font-size: 14px;
+      }
+
+      .subject {
+        font-weight: bold;
+        text-decoration: underline;
+      }
+
+      .name {
+        font-style: italic;
+      }
+
+      .equation {
+        color: red;
+      }
+
+      .object {
+        text-align: left;
+        margin-bottom: 15px;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      /* Tablet screens */
+      @media screen and (max-width: 768px) {
+        body {
+          padding: 15px;
+        }
+
+        h2 {
+          font-size: 1.6rem;
+          margin-bottom: 15px;
+        }
+
+        .object {
+          font-size: 15px;
+          margin-bottom: 12px;
+        }
+
+        pre {
+          padding: 12px 30px;
+          font-size: 13px;
+        }
+      }
+
+      /* Mobile screens */
+      @media screen and (max-width: 480px) {
+        body {
+          padding: 10px;
+          justify-content: center;
+        }
+
+        h2 {
+          font-size: 1.3rem;
+          margin-bottom: 12px;
+        }
+
+        .object {
+          font-size: 14px;
+          margin-bottom: 10px;
+        }
+
+        pre {
+          padding: 10px 15px;
+          font-size: 12px;
+          line-height: 1.5;
+        }
+      }
+
+      /* Extra small screens */
+      @media screen and (max-width: 360px) {
+        h2 {
+          font-size: 1.1rem;
+        }
+
+        .object {
+          font-size: 13px;
+        }
+
+        pre {
+          padding: 8px 10px;
+          font-size: 11px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>Định dạng văn bản</h2>
+
+      <p class="object">
+        <span class="subject">Hóa học:</span>
+        <span class="name">Nước:</span>
+        <span class="equation">H<sub>2</sub>O</span>
+        ;
+        <span class="name">Axit Sunfuric:</span>
+        <span class="equation">H<sub>2</sub>SO<sub>4</sub></span>
+      </p>
+
+      <p class="object">
+        <span class="subject">Toán học:</span>
+        <span class="name">Phương trình bậc 2:</span>
+        <span class="equation">ax<sup>2</sup> + bx + c = 0</span>
+      </p>
+
+      <p class="object">
+        <span class="subject">Tin học:</span>
+        <span class="name">Vòng lặp for:</span>
+      </p>
+
+      <pre>
+int tong = 0;
+for(int i = 1; i <= 10; i++)
+    tong += i;
+printf("Tong cac so tu 1 => 10 la: %d\n", tong);
+</pre
+      >
+    </div>
+  </body>
+</html>

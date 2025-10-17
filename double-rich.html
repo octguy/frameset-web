@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <title>DoubleRich</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: url("/images/8/rose.png") 10% bottom no-repeat fixed,
+          url("/images/8/kim-tea-hee.png") left bottom no-repeat fixed,
+          url("/images/8/nen-hoa-hong.png") right bottom no-repeat fixed;
+        background-color: #8e0205;
+        background-size: 200px, 300px, cover;
+        font: 12pt/20pt Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #fdcfff;
+        margin-top: 50px;
+      }
+
+      table {
+        width: 90%;
+        max-width: 1000px;
+        margin: 0 auto;
+        border: 1px #fdcfff solid;
+        border-collapse: collapse;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(3px);
+      }
+
+      td {
+        padding: 5px;
+      }
+
+      .bullet {
+        list-style: none;
+        color: #ff0000;
+        font-weight: bold;
+      }
+
+      #content {
+        column-count: 2;
+        column-gap: 20px;
+        padding: 20px;
+      }
+
+      #break {
+        margin-top: 15px;
+        break-before: column;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      h1,
+      h2 {
+        margin: 0;
+      }
+
+      #break {
+        margin-top: 15px;
+        break-before: column;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 768px) {
+        body {
+          background-attachment: scroll;
+          background-size: 150px, 220px, cover;
+        }
+
+        #content {
+          column-count: 1; /* từ 2 cột xuống 1 cột */
+          padding: 15px;
+        }
+
+        /* ⚠️ QUAN TRỌNG: bỏ break khi chỉ còn 1 cột */
+        #break {
+          break-before: auto;
+        }
+
+        table {
+          width: 95%;
+        }
+
+        h2 {
+          font-size: 22px;
+        }
+
+        h1 {
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td width="67%" height="88" align="right" bgcolor="#FF0000">
+          <h2 style="color: #ffffff; font-size: 28px">
+            Công nghệ dầu gội dưỡng tóc mới
+          </h2>
+        </td>
+        <td width="33%" rowspan="2" bgcolor="#FDCFFF">
+          <img
+            src="/images/8/qua-tang-doublerich.png"
+            alt="quà tặng"
+            width="283"
+            height="193"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="#FDCFFF" align="center">
+          <h1 style="color: red">Tỏa sáng cùng DOUBLE RICH</h1>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" valign="top">
+          <div id="content">
+            <ul>
+              <li class="bullet">&hearts; Sản phẩm khuyến mãi :</li>
+              <ul type="disc">
+                <li>Dầu gội Double Rich mới 200ml, 400ml có tem khuyến mãi</li>
+              </ul>
+              <li class="bullet">&hearts; Đối tượng tham gia :</li>
+              <ul type="disc">
+                <li>
+                  Áp dụng cho tất cả người tiêu dùng cuối cùng mua sản phẩm
+                  khuyến mãi.
+                </li>
+                <li>
+                  Chương trình không áp dụng cho nhân viên, nhà phân phối bao
+                  gồm các tổng đại lý, đại lý, cửa hàng bán sỉ, lẻ và các cá
+                  nhân kinh doanh sản phẩm của công ty LDMP LG Vina, công ty
+                  quảng cáo, công ty làm dịch vụ chương trình khuyến mãi này,
+                  nhân viên siêu thị.
+                </li>
+              </ul>
+              <li class="bullet" id="break">&hearts; Cách thức nhận giải :</li>
+              <ol>
+                <li>
+                  <strong>Giải khuyến khích :</strong> Khách hàng đổi quà tại
+                  các cửa hàng bán lẻ trên toàn quốc bắt đầu. Bắt đầu từ ngày
+                  15/06/2005 đến 17h ngày 12/08/2005
+                </li>
+                <li>
+                  <strong>Giải đặc biệt, nhất, nhì :</strong> Khách hàng cắt
+                  phần mã vạch trên mỗi chai dầu gội có khuyến mãi và gởi kèm
+                  phiếu trúng thưởng về văn phòng công ty, hạn chót đến hết ngày
+                  31/07/2005 (căn cứ theo dấu bưu điện nơi gởi). Sau đó công ty
+                  sẽ gởi thư thông báo trúng thưởng và cách thức nhận quà cho
+                  khách hàng.
+                </li>
+              </ol>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

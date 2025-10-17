@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Đăng Nhập</title>
+    <style>
+      body {
+        font: 12pt/20pt Arial, Helvetica, sans-serif;
+      }
+
+      h1 {
+        color: #ff0000;
+        text-align: center;
+      }
+
+      #login-layout {
+        width: 50%;
+        text-align: center;
+        padding: 10px;
+        margin: 100px auto;
+        border: 2px dotted #ff0000;
+        border-radius: 20px;
+        background: url("/images/11/login.jpg") right center no-repeat;
+        background-size: contain;
+      }
+
+      .input-value {
+        border: 1px dotted #ff0000;
+        border-radius: 20px;
+        background-color: rgb(243, 140, 140);
+        padding: 10px;
+        margin: 5px;
+        width: 200px;
+      }
+
+      .input-value:focus {
+        border: 1px solid #000000;
+        border-width: 2px;
+        outline: none;
+      }
+
+      .btn {
+        border: 1px dotted #ff0000;
+        background: linear-gradient(to bottom, #990000, #ff0000);
+        padding: 10px;
+        border-radius: 20px;
+        color: #ffffff;
+        font-weight: bold;
+      }
+    </style>
+    <script>
+      function checkLogin() {
+        var username = document.getElementById("username");
+        var password = document.getElementById("password");
+        var notification = document.getElementById("notification");
+
+        if (username.value == "") {
+          notification.innerHTML = "Bạn chưa nhập <b>tên người dùng</b>";
+          username.focus();
+          return false;
+        }
+
+        if (password.value == "") {
+          notification.innerText = "Bạn chưa nhập mật khẩu";
+          password.focus();
+          return false;
+        }
+
+        if (username.value !== "" && password.value == "123456") {
+          alert("Chào bạn " + username.value);
+          return true;
+        } else {
+          notification.innerHTML = "Thông tin đăng nhập không hợp lệ";
+          username.select();
+          return false;
+        }
+      }
+
+      function reset() {
+        var notification = document.getElementById("notification");
+        var username = document.getElementById("username");
+        notification.innerText = "";
+        username.focus();
+      }
+    </script>
+  </head>
+  <body>
+    <form id="login">
+      <table id="login-layout">
+        <tr>
+          <td colspan="2" align="center"><h1>Form Đăng Nhập</h1></td>
+        </tr>
+        <tr>
+          <td align="right">Tên người dùng</td>
+          <td align="left">
+            <input
+              type="text"
+              class="input-value"
+              id="username"
+              name="username"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td align="right">Mật khẩu</td>
+          <td align="left">
+            <input
+              type="password"
+              class="input-value"
+              id="password"
+              name="password"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <input
+              type="button"
+              class="btn"
+              value="Đăng nhập"
+              id="login-btn"
+              onclick="return checkLogin()"
+            />
+            <input
+              type="reset"
+              class="btn"
+              value="Nhập lại"
+              id="reset-btn"
+              onclick="reset()"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center"><label id="notification"></label></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

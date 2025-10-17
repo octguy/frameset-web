@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Đặt tour</title>
+    <script>
+      function ThongBao() {
+        alert(
+          "Bạn đã đăng ký thành công. Thông tin đăng ký của bạn như sau:\n===================================\n" +
+            "Họ tên: " +
+            txtHoTen.value +
+            "\nĐịa chỉ: " +
+            txtDiaChi.value +
+            "\nĐiện thoại: " +
+            txtDienThoai.value +
+            "\nLoại khách: " +
+            (chkKhachVN.checked ? "Việt Nam" : "Nước ngoài") +
+            "\nChọn tour: " +
+            selChonTour.options[selChonTour.selectedIndex].text +
+            "\nPhương tiện: " +
+            (maybay.checked
+              ? "Máy bay"
+              : xedulich.checked
+              ? "Xe du lịch"
+              : "Tự túc") +
+            "\nSố lượng khách đoàn: " +
+            numNguoiLon.value +
+            " người lớn - " +
+            numTreEm.value +
+            " trẻ em" +
+            "\nGhi chú thêm: " +
+            txaGhiChu.value +
+            "\n==================================="
+        );
+      }
+    </script>
+    <style>
+      body {
+        font: 12pt/20pt Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+        color: #0033ff;
+        text-shadow: 1px 1px 0px #ffffff;
+        font-weight: bold;
+        background: url("/images/13/bg1.jpg") center no-repeat fixed;
+        background-size: cover;
+      }
+
+      .myTable {
+        width: 60%;
+        background-color: rgba(255, 255, 255, 0.5);
+        border: 1px solid #ffffff;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px #ffffff;
+      }
+
+      h1 {
+        color: #ff9900;
+        text-shadow: 2px 2px 2px #ffffff, 0 0 25px #ffffff, 0 0 5px #ffffff;
+      }
+
+      .txt {
+        border: 1px solid #ffffff;
+        border-radius: 10px;
+        background-color: rgba(255, 153, 0, 0.25);
+        color: #0000ff;
+        padding: 5px;
+        margin: 2px;
+        font-size: 14px;
+        font-weight: bold;
+        text-shadow: 1px 1px 0px #ffffff;
+      }
+
+      .btn {
+        width: 100px;
+        background-color: #ff9900;
+        color: #ffffff;
+        padding: 10px;
+        border: 0px;
+        border-radius: 10px;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px #000000;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 align="center">ĐĂNG KÝ DU LỊCH</h1>
+    <form
+      id="frmDatTour"
+      name="frmDatTour"
+      method="post"
+      action="xuLyDatTour.php"
+      onSubmit="return(ThongBao());"
+    >
+      <table
+        width="550"
+        align="center"
+        cellpadding="5"
+        cellspacing="0"
+        class="myTable"
+      >
+        <tr>
+          <td align="right">Họ tên</td>
+          <td>
+            <input
+              name="txtHoTen"
+              type="text"
+              autofocus
+              required
+              class="txt"
+              id="txtHoTen"
+              size="25"
+            />
+            (*)
+          </td>
+        </tr>
+        <tr>
+          <td align="right">Địa chỉ</td>
+          <td>
+            <textarea
+              name="txtDiaChi"
+              cols="30"
+              rows="2"
+              required
+              class="txt"
+              id="txtDiaChi"
+            ></textarea
+            ><span style="vertical-align: top"> (*)</span>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">Điện thoại</td>
+          <td>
+            <input
+              name="txtDienThoai"
+              type="text"
+              required
+              class="txt"
+              id="txtDienThoai"
+            />
+            (*)
+          </td>
+        </tr>
+        <tr>
+          <td align="right">Khách Việt Nam</td>
+          <td>
+            <input
+              name="chkKhachVN"
+              type="checkbox"
+              class="txt"
+              id="chkKhachVN"
+              checked="checked"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td align="right">Chọn tour</td>
+          <td>
+            <select name="selChonTour" class="txt" id="selChonTour">
+              <optgroup label="Miền Bắc">
+                <option value="1" selected="selected">
+                  Hà Nội - Hạ Long - Sapa
+                </option>
+                <option value="2">Hà Nội - Chùa Hương - Ninh Bình</option>
+                <option value="3">Hà Nội - Cát Bà - Tuần Châu</option>
+              </optgroup>
+              <optgroup label="Miền Trung">
+                <option value="4">Huế - Bạch Mã - Đà Nẵng</option>
+                <option value="5">Nha Trang - Đà Lạt</option>
+                <option value="6">Buôn Mê Thuột - Gia Lai - Kontum</option>
+              </optgroup>
+              <optgroup label="Miền Nam">
+                <option value="7">TPHCM - Cần Thơ - Cà Mau</option>
+                <option value="8">Phú Quốc - Côn Đảo</option>
+              </optgroup>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">Phương tiện</td>
+          <td>
+            <label
+              ><input
+                name="phuongtien"
+                type="radio"
+                id="maybay"
+                value="1"
+                checked="checked"
+              />Máy Bay</label
+            >
+            <label
+              ><input
+                name="phuongtien"
+                type="radio"
+                id="xedulich"
+                value="2"
+              />Xe du lịch</label
+            >
+            <label
+              ><input name="phuongtien" type="radio" id="tutuc" value="3" />Tự
+              túc</label
+            >
+          </td>
+        </tr>
+        <tr>
+          <td align="right"></td>
+          <td colspan="2" align="center">
+            <fieldset>
+              <legend>Số lượng khách đoàn</legend>
+              <label for="numNguoiLon">Người lớn</label>
+              <input
+                name="numNguoiLon"
+                type="number"
+                class="txt"
+                id="numNguoiLon"
+                min="1"
+                step="1"
+                value="1"
+                style="width: 50px"
+              />
+              <label for="numTreEm">Trẻ em</label>
+              <input
+                name="numTreEm"
+                type="number"
+                class="txt"
+                id="numTreEm"
+                min="0"
+                step="1"
+                value="1"
+                style="width: 50px"
+              />
+            </fieldset>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">Ghi chú</td>
+          <td>
+            <textarea
+              name="txaGhiChu"
+              cols="30"
+              rows="3"
+              class="txt"
+              id="txaGhiChu"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <input
+              name="button"
+              type="submit"
+              class="btn"
+              id="submit"
+              value="Đồng ý"
+            />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

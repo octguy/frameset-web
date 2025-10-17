@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Phiếu đăng ký (Responsive)</title>
+    <style>
+      :root {
+        --primary: #007bff;
+        --primary-dark: #0056b3;
+        --bg: #f0f8ff;
+        --ink: #003366;
+        --radius: 12px;
+        --shadow: 0 6px 22px rgba(0, 123, 255, 0.18);
+        --pad: clamp(16px, 2vw + 8px, 28px);
+        --gap: clamp(8px, 1.5vw, 16px);
+        --label-w: 45%;
+        --container-w: min(100% - 24px, 720px);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial,
+          sans-serif;
+        background: var(--bg);
+        display: grid;
+        align-items: start;
+        justify-items: center;
+        margin: 0;
+        padding: clamp(12px, 2vh, 32px) 0;
+      }
+
+      .title {
+        text-align: center;
+        color: var(--primary);
+        text-shadow: 1px 1px 2px #fff;
+        margin: 8px 12px 14px;
+        font-size: clamp(22px, 3.5vw, 32px);
+      }
+
+      .container {
+        width: var(--container-w);
+        background: #fff
+          url("https://cdn.pixabay.com/photo/2017/03/13/14/39/shopping-bag-2135204_1280.png")
+          no-repeat right bottom;
+        background-size: clamp(140px, 30%, 260px);
+        padding: var(--pad);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      tr + tr td {
+        padding-top: 10px;
+      }
+      td {
+        padding: 6px 0;
+        vertical-align: top;
+      }
+      td.label {
+        text-align: right;
+        font-weight: 600;
+        color: var(--ink);
+        width: var(--label-w);
+        padding-right: 12px;
+        line-height: 2.2;
+      }
+
+      /* ===== INPUTS ===== */
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="number"],
+      textarea,
+      select {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #d5dbe1;
+        border-radius: 10px;
+        font-size: 15px;
+        outline: none;
+        transition: box-shadow 0.2s, border-color 0.2s;
+      }
+      input:focus,
+      textarea:focus,
+      select:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.12);
+      }
+
+      .textarea-diachi {
+        min-height: 96px;
+        resize: vertical;
+      }
+      .select-sanpham {
+        min-height: 96px;
+      }
+
+      /* ===== RADIO BUTTONS ===== */
+      .radios {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        align-items: center;
+      }
+      .radios input {
+        width: auto;
+      }
+
+      /* ===== BUTTONS ===== */
+      .buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        padding-top: 14px;
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      .buttons button {
+        background-color: var(--primary);
+        text-align: center;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 10px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: background-color 0.2s, transform 0.02s ease-in-out;
+        min-width: 130px;
+      }
+      .buttons button:hover {
+        background-color: var(--primary-dark);
+      }
+      .buttons button:active {
+        transform: translateY(1px);
+      }
+      .buttons .reset-btn {
+        background-color: #00a8ff;
+      }
+      .buttons .reset-btn:hover {
+        background-color: #007bb5;
+      }
+
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 900px) {
+        :root {
+          --container-w: min(100% - 24px, 640px);
+        }
+        .container {
+          background-size: clamp(120px, 26%, 220px);
+        }
+        td.label {
+          width: 38%;
+        }
+      }
+
+      @media (max-width: 640px) {
+        :root {
+          --container-w: min(100% - 20px, 560px);
+        }
+        .container {
+          background-size: 0;
+        }
+        table,
+        tbody,
+        tr,
+        td {
+          display: block;
+          width: 100%;
+        }
+        td.label {
+          text-align: left;
+          padding-right: 0;
+          padding-bottom: 6px;
+          width: 100%;
+          line-height: 1.4;
+        }
+        tr + tr {
+          margin-top: var(--gap);
+        }
+        .buttons {
+          flex-direction: column;
+        }
+        .buttons button {
+          width: 100%;
+          max-width: 300px;
+        }
+      }
+
+      @media (max-width: 380px) {
+        body {
+          padding: 10px 0;
+        }
+        .title {
+          font-size: 20px;
+        }
+        .container {
+          padding: 14px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title">Phiếu đăng ký</h1>
+    <div class="container" role="region" aria-label="Biểu mẫu đăng ký">
+      <form id="formDangKy" novalidate>
+        <table>
+          <tr>
+            <td class="label"><label for="hoten">Họ tên</label></td>
+            <td>
+              <input
+                type="text"
+                id="hoten"
+                name="hoten"
+                autocomplete="name"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td class="label"><label for="diachi">Địa chỉ</label></td>
+            <td>
+              <textarea
+                id="diachi"
+                name="diachi"
+                class="textarea-diachi"
+                autocomplete="street-address"
+              ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td class="label"><label for="email">Email</label></td>
+            <td>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td class="label"><label for="dienthoai">Điện thoại</label></td>
+            <td>
+              <input
+                type="tel"
+                id="dienthoai"
+                name="dienthoai"
+                inputmode="tel"
+                autocomplete="tel"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td class="label">Giới tính</td>
+            <td class="radios">
+              <label
+                ><input
+                  type="radio"
+                  id="nam"
+                  name="gioitinh"
+                  value="Nam"
+                  checked
+                />
+                Nam</label
+              >
+              <label
+                ><input type="radio" id="nu" name="gioitinh" value="Nữ" />
+                Nữ</label
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="label"><label for="nghenghiep">Nghề nghiệp</label></td>
+            <td>
+              <select id="nghenghiep" name="nghenghiep">
+                <option>Sinh viên</option>
+                <option>Nhân viên</option>
+                <option>Nội trợ</option>
+                <option>Khác</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td class="label"><label for="sanpham">Chọn sản phẩm</label></td>
+            <td>
+              <select
+                id="sanpham"
+                name="sanpham"
+                multiple
+                class="select-sanpham"
+              >
+                <option>Kem đánh răng</option>
+                <option>Dầu gội</option>
+                <option>Sữa tắm</option>
+                <option>Bột giặt</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td class="label">
+              <label for="songuoi">Dự đoán số người tham gia</label>
+            </td>
+            <td>
+              <input
+                type="number"
+                id="songuoi"
+                name="songuoi"
+                value="1"
+                min="1"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div class="buttons" style="justify-content: center; width: 100%">
+                <button type="submit">Đăng ký</button>
+                <button type="reset" class="reset-btn">Làm lại</button>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+
+    <script>
+      const form = document.getElementById("formDangKy");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const get = (id) => document.getElementById(id);
+        const hoten = get("hoten").value.trim() || "(chưa nhập)";
+        const diachi = get("diachi").value.trim() || "(chưa nhập)";
+        const email = get("email").value.trim() || "(chưa nhập)";
+        const dienthoai = get("dienthoai").value.trim() || "(chưa nhập)";
+        const gioitinh =
+          document.querySelector('input[name="gioitinh"]:checked')?.value ||
+          "(khác)";
+        const nghenghiep = get("nghenghiep").value;
+        const sanpham =
+          Array.from(get("sanpham").selectedOptions)
+            .map((o) => o.text)
+            .join(", ") || "(chưa chọn)";
+        const songuoi = get("songuoi").value;
+
+        alert(
+          "Bạn đã đăng ký thành công. Thông tin đăng ký của bạn như sau:\n===================================\n" +
+            "Họ tên: " +
+            hoten +
+            "\nĐịa chỉ: " +
+            diachi +
+            "\nEmail: " +
+            email +
+            "\nĐiện thoại: " +
+            dienthoai +
+            "\nGiới tính: " +
+            gioitinh +
+            "\nNghề nghiệp: " +
+            nghenghiep +
+            "\nChọn sản phẩm: " +
+            sanpham +
+            "\nDự đoán số người tham gia: " +
+            songuoi +
+            "\n==================================="
+        );
+      });
+    </script>
+  </body>
+</html>

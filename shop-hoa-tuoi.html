@@ -1,0 +1,100 @@
+<html>
+  <head>
+    <title>Shop hoa tươi</title>
+    <link rel="icon" href="https://img.icons8.com/ios/50/000000/mother.png" />
+    <style>
+      @font-face {
+        font-family: "UTM Wedding";
+        src: url("UTM Wedding K&T.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        min-height: 100vh;
+        margin: 50;
+        background: #f0f0f0;
+        flex-direction: column;
+        background: url("/images/5/nen-hoa-hong.jpg") no-repeat right bottom
+            fixed,
+          url("/images/5/binh-hoa.jpg") left 20% no-repeat fixed;
+      }
+
+      marquee {
+        font-family: "UTM Wedding", Arial, sans-serif;
+        font-size: 30px;
+        color: white;
+        text-align: center;
+        text-shadow: 0 0 5px #ff66cc, 0 0 10px #ff66cc, 0 0 20px #ff66cc,
+          0 0 40px #ff99ff;
+        /* margin-bottom: 50px; */
+      }
+
+      .gioithieu_lienhe {
+        font-weight: bold;
+        color: white;
+        background-color: #ff66cc;
+      }
+
+      .content-container {
+        text-align: left;
+      }
+
+      .bullet-hoa-tim {
+        list-style-image: url("/images/5/bullet-hoa-tim.png");
+      }
+
+      .bullet-tron-hong {
+        list-style-image: url("/images/5/bullet-tron-hong.png");
+      }
+
+      .copyright {
+        font-size: smaller;
+        font-style: italic;
+        color: #6a00c5;
+      }
+    </style>
+  </head>
+
+  <body>
+    <marquee
+      style="margin-left: Opx"
+      behavior="alternate"
+      onMouseOver="this.stop();"
+      onMouseOut="this.start();"
+      ><h1>Shop Hoa tươi Hạnh Phúc</h1></marquee
+    >
+    <ol>
+      <li><span class="gioithieu_lienhe">Giới thiệu</span></li>
+      <ul class="bullet-hoa-tim">
+        <li>Thành lập ngày 01/07/2014</li>
+        <li>Chuyên cung cấp các loại hoa tươi</li>
+        <li>Có trên 20 cửa hàng bán lẻ tại TP.HCM</li>
+        <li>Nhận kết giỏ hoa theo yêu cầu của khách hàng</li>
+      </ul>
+      <hr width="100%" align="center" />
+      <li><span class="gioithieu_lienhe">Liên hệ</span></li>
+      <ul class="bullet-tron-hong">
+        <li>
+          Địa chỉ:
+          <span style="font-weight: bold">245 Nguyễn Văn Cừ Q5, TP.HCM</span>
+        </li>
+        <li>Điện thoại: 84-08-8351056</li>
+        <li>Fax: (08)62619416 (Ext. 115)</li>
+        <li>Copyright: Công Ty Tin Hoc ABC</li>
+      </ul>
+      <blockquote>
+        <p class="copyright">
+          &hearts; Copyright:
+          <a href="https://se.uit.edu.vn/" title="Gửi email Có Yến"
+            >Công Ty Tin Học ABC</a
+          >
+        </p>
+      </blockquote>
+    </ol>
+  </body>
+</html>
