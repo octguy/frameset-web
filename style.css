@@ -94,6 +94,60 @@ img {
   column-rule-color: darkgray;
 }
 
+.purple {
+  color: rgb(183, 1, 183);
+}
+
+/* Tablet screens */
+@media screen and (max-width: 1024px) {
+  h1 {
+    padding: 40px 80px 25px 80px;
+    font-size: 1.8rem;
+  }
+
+  .container {
+    padding: 0 80px;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  .description {
+    text-indent: 4vh;
+  }
+
+  .dropcap img.left-img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+  }
+}
+
+/* Mobile screens */
+@media screen and (max-width: 768px) {
+  .dropcap img.left-img {
+    width: 30px;
+    height: auto;
+    margin-right: 8px;
+    float: left;
+  }
+}
+
+/* Small mobile screens */
+@media screen and (max-width: 480px) {
+  .dropcap img.left-img {
+    width: 25px;
+    height: auto;
+    margin-right: 5px;
+    float: left;
+  }
+}
+
 /* Tablet */
 @media (max-width: 992px) {
   body {

@@ -180,16 +180,12 @@
         color: gold;
       }
 
-      /* ======================================= */
-      /* ===== RESPONSIVE CSS (UPDATED) ===== */
-      /* ======================================= */
       @media screen and (max-width: 768px) {
         .container {
           height: 76vh;
         }
 
         .left {
-          /* FIXED: Width decreased by 40% (from 40% to 24%) */
           width: 20%;
           height: 100%;
           overflow-y: auto;
@@ -200,12 +196,10 @@
         }
 
         .right {
-          /* FIXED: Width increased to fill remaining space */
           width: 80%;
           height: 100%;
         }
 
-        /* --- Top Navigation --- */
         .top-nav a:not(.icon),
         .top-nav .drop-down {
           display: none;
@@ -217,7 +211,6 @@
           padding: 14px 16px;
         }
 
-        /* --- Responsive state (when .responsive class is added by JS) --- */
         .top-nav.responsive {
           position: relative;
           height: auto;
@@ -344,8 +337,6 @@
     </footer>
 
     <script>
-      /* Toggles between adding and removing the "responsive" class 
-         to top-nav when the user clicks on the icon */
       function toggle() {
         var x = document.getElementById("top-nav");
         if (x.className === "top-nav") {
