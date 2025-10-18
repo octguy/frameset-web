@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trần Đức Thịnh - Student Profile</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .container {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 30px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        max-width: 1200px;
+        width: 100%;
+        overflow: hidden;
+        animation: fadeIn 0.8s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 60px 40px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 70%
+        );
+        animation: pulse 4s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.5;
+        }
+        50% {
+          transform: scale(1.1);
+          opacity: 0.8;
+        }
+      }
+
+      .avatar {
+        width: 120px;
+        height: 120px;
+        background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 48px;
+        font-weight: bold;
+        color: white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        position: relative;
+        z-index: 1;
+        animation: bounce 2s ease-in-out infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .header h1 {
+        color: white;
+        font-size: 32px;
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 1;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .header p {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 16px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .content {
+        padding: 40px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .info-card {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        border-radius: 20px;
+        padding: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .info-label {
+        color: #667eea;
+        font-weight: 600;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+      }
+
+      .info-label::before {
+        content: "▶";
+        margin-right: 8px;
+        font-size: 12px;
+      }
+
+      .info-value {
+        color: #2d3748;
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      .footer {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 30px;
+        text-align: center;
+        color: white;
+      }
+
+      .footer p {
+        font-size: 14px;
+        opacity: 0.9;
+      }
+
+      @media (max-width: 640px) {
+        .header {
+          padding: 40px 20px;
+        }
+
+        .header h1 {
+          font-size: 26px;
+        }
+
+        .avatar {
+          width: 100px;
+          height: 100px;
+          font-size: 40px;
+        }
+
+        .content {
+          padding: 30px 20px;
+          grid-template-columns: 1fr;
+        }
+
+        .info-card {
+          padding: 20px;
+        }
+
+        .info-value {
+          font-size: 18px;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .header h1 {
+          font-size: 22px;
+        }
+
+        .info-value {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="avatar">TĐT</div>
+        <h1>Trần Đức Thịnh</h1>
+        <p>Student Profile</p>
+      </div>
+
+      <div class="content">
+        <div class="info-card">
+          <div class="info-label">Họ và tên</div>
+          <div class="info-value">Trần Đức Thịnh</div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-label">Mã số sinh viên</div>
+          <div class="info-value">23521511</div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-label">Lớp học</div>
+          <div class="info-value">Công nghệ Web và ứng dụng SE347.Q14</div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>© 2025 Student Information System</p>
+      </div>
+    </div>
+  </body>
+</html>
