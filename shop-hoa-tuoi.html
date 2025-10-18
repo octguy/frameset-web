@@ -57,6 +57,41 @@
         font-style: italic;
         color: #6a00c5;
       }
+
+      /* Mobile responsive styles */
+      @media screen and (max-width: 768px) {
+        body {
+          background-image: none;
+          background-size: auto;
+          margin: 20px;
+        }
+
+        marquee {
+          font-size: 20px;
+        }
+
+        .content-container {
+          background-color: rgba(255, 255, 255, 0.9);
+          padding: 15px;
+          border-radius: 10px;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        body {
+          background-image: none;
+          background-size: auto;
+          margin: 20px;
+        }
+
+        marquee {
+          font-size: 16px;
+        }
+
+        body {
+          margin: 10px;
+        }
+      }
     </style>
   </head>
 
