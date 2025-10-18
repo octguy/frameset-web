@@ -102,8 +102,7 @@ img {
 @media (max-width: 992px) {
   body {
     margin: 0 10px;
-    background-size: cover;
-    background-attachment: scroll;
+    background: url("/images/10/co-vietnam.png") center center no-repeat fixed;
   }
 
   #sg {
@@ -131,6 +130,7 @@ img {
 /* Mobile */
 @media (max-width: 600px) {
   body {
+    background: url("/images/10/co-vietnam.png") center center no-repeat fixed;
     margin: 0 8px;
   }
 
